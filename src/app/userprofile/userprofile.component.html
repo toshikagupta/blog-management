@@ -1,0 +1,60 @@
+<div class="blockcss">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 offset-md-1">
+
+            <img src="{{user.image}}" alt="" height=65 width=65 class="rounded-circle mx-2">
+          <h4>{{user.username}}</h4>
+         
+          <button class="btn btn-sm  btn-outline-secondary"
+               routerLink="settings">
+  <i class="material-icons">edit</i>
+  &nbsp;
+  Edit profile 
+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+  <div class="row">
+    <div class="col-xs-2 col-md-10 offset-md-1">
+      <div class="article">
+          <ul class="nav nav-pills outline-active">
+
+              <li class="nav-item">
+                  <button class="nav-link" (click)="getMyArticles()">
+                  My Articles
+                  </button>
+              </li>
+  
+              <li class="nav-item">
+                <button class="nav-link"(click)="getFavouriteArticles()" >
+                  Favorited Articles
+                </button>
+              </li>
+  
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-8">
+          
+              <span *ngFor="let a of article">
+               <app-blog-component [articles]="a"></app-blog-component>
+              </span>
+           
+        </div>
+        <div class="col-md-4">
+         
+        </div>
+      </div>
+    </div>
+
+

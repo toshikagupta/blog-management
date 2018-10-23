@@ -1,0 +1,23 @@
+
+<div class="row">
+    <div class="col-sm-3">
+     
+    </div>
+    <div class="col-sm-6">
+    <h1 class="text-sm-center">Settings</h1>
+    <form [formGroup]="settingsForm" (ngSubmit)="change()">
+      <input type="text" formControlName="url" name="url" class="form-control my-3 p-4" placeholder="URL of profle picture">
+      <input type="text" formControlName="username" name="username" class="form-control my-3 p-4" value="{{username}}">
+      <input type="text" formControlName="bio" name="bio" class="form-control my-3 p-4" placeholder="Short bio about you">
+      <input type="email" formControlName="email" name="email" class="form-control my-3 p-4" value="{{email}}">
+      <input type="password" formControlName="password" name="password" class="form-control my-3 p-4" placeholder="Enter Password">
+      <div class="d-flex justify-content-end">
+        <input type="submit" value="Update Settings" class="btn btn-dark">
+      </div>
+    </form>
+    <input type="submit" value="logout" class="btn btn-dark" (click)="logout()">
+    </div>
+    <div class="col-sm-3">
+
+    </div>
+  </div>

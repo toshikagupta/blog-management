@@ -1,0 +1,97 @@
+
+  <div class="banner">
+    <div class="container"> 
+     <h1> {{article.title}}</h1>
+     <div class="content-banner">
+        <div class="d-flex justify-content-between">
+            <div class="d-flex">
+              <img src="{{article.author.image}}" alt="" height=35 width=35 class="rounded-circle mx-2">
+              <div class="d-flex flex-column align-items-start">
+                <span class="username">{{article.author.username}}</span>
+                <span class="timestamp text-secondary">{{date}}</span>
+               
+              </div>
+               <div *ngIf="!(article.author.username===currentuser)">  
+              <button type="button" class="btn btn-outline-primary buttoncolor m-3" (click)="followUser()" *ngIf="!article.author.following">Follow {{article.author.username}}</button>
+              <button type="button" class="btn btn-outline-primary buttoncolor m-3" (click)="UnfollowUser()" *ngIf="article.author.following">UnFollow {{article.author.username}}</button>
+              <button type="button" class="btn btn-outline-primary buttoncolorfavourite m-3" *ngIf="(article.favorited)" (click)="Unfavourite()">UnFavourite Article {{article.favoritesCount}}
+                  <i class="material-icons">favorite</i>
+              </button>
+              <button type="button" class="btn btn-outline-primary buttoncolorfavourite m-3" *ngIf="!article.favorited" (click)="favourite()">Favourite Article {{article.favoritesCount}}
+                  <i class="material-icons">favorite_border</i>
+              </button>
+                </div>  
+              <div *ngIf="article.author.username===currentuser">  
+                  <button type="button"  (click)="editArticle()" class="btn btn-outline-primary buttoncolor m-3">Edit Article
+                    <i class="material-icons">edit</i>
+                  </button>
+                  <button type="button" (click)="deleteArticle()" class="btn btn-outline-primary buttoncolorfavourite m-3">Delete Article
+                      <i class="material-icons">delete</i>
+                  </button>
+                   </div>
+              </div>
+            </div>
+        </div>
+     </div>
+    </div>
+    
+    
+    <div class="container page">
+        <div class="row">
+            <div class="col-xs-12">
+             {{article.body}}
+              </div>
+        </div>
+        <hr>
+</div>
+
+<!-- for posting comment -->
+<div class="row">
+    <div class="col-sm-3">
+     
+      </div>
+  <div class="col-sm-6">
+<div class="rounded comment-box">
+    <form class="d-flex flex-column" [formGroup]="userInputs" (ngSubmit)="onSubmit()">
+      <textarea formControlName="comment" rows="4" cols="80" placeholder="Write a comment..." class="form-control p-3"></textarea>
+      <div class="d-flex justify-content-between comment-footer p-2">
+        <div class="">
+          <img src="{{article.author.image}}" class="rounded-circle" height=35 width=35>
+        </div>
+        <input type="submit" name="submit" value="Post Comment" class="btn btn-outline-primary buttoncolorfavourite m-3">
+      </div>
+    </form>
+  </div>
+  </div>
+  <div class="col-sm-3">
+     
+    </div>
+  </div>
+  <!--to display all comments  -->
+  <div class="row">
+    <div class="col-sm-3">
+      </div>
+      
+  <div class="rounded comment-box col-sm-6">
+      <span *ngFor="let singleComment of allComments">
+      <div value rows="4" cols="80"  class="form-control p-3">{{singleComment.body}}</div>
+      <div class="d-flex justify-content-between comment-footer p-2">
+        <div class="">
+          <img src="{{singleComment.author.image}}" class="rounded-circle" height=35 width=35>
+          {{singleComment.author.username}}
+        </div>
+        <div *ngIf="singleComment.author.username===currentuser" >
+        <button type="button" (click)="deleteComment(singleComment.id)" class="btn btn-outline-primary buttoncolorfavourite m-3">
+            <i class="material-icons">delete</i>
+        </button>
+      </div>
+      </div>
+    
+    </span>
+</div>
+<div class="col-sm-3">
+  </div>
+</div>
+
+
+

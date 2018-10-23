@@ -1,0 +1,30 @@
+.banner {
+    color: #fff;
+    background: #333;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.content-banner{
+    display: block;
+    position: relative;
+    font-weight: 300;
+}
+.container.page {
+    margin-top: 1.5rem;
+}
+.buttoncolor
+{
+    color: #ffffff;
+    border:1px solid #ffffff;
+}
+.buttoncolorfavourite
+{
+    color: #5cb85c;
+    border: 1px solid#5cb85c;
+}
+
+.btn-outline-primary:hover {
+    background-color: #5cb85c;
+    color:#ffffff;
+}

@@ -1,0 +1,46 @@
+<div class="article mt-2">
+    <hr>
+    <div class="d-flex justify-content-between">
+      <div class="d-flex">
+          <a routerLink="/profiles/{{articles.author.username}}"> 
+        <img src="{{articles.author.image}}" alt="" height=35 width=35 class="rounded-circle mx-2">
+        <div class="d-flex flex-column align-items-start">
+          
+          <span class="username">{{articles.author.username}}</span>
+          <span class="timestamp text-secondary">{{date}}</span>
+        </div>
+           </a>
+       
+      </div>
+      <span></span>
+      <button  *ngIf="!articles.favorited" (click)="favourite(articles.slug, articles)" 
+      class="favorite-btn rounded" >
+       <span>
+        <i  class="material-icons mr-1">
+          favorite_border
+        </i>
+        <span class="">{{articles.favoritesCount}}</span>
+     
+        </span>
+      </button>
+      <button  *ngIf="articles.favorited" (click)="Unfavourite(articles.slug)" 
+      class="favorite-btn rounded" >
+       <span>
+        <i  class="material-icons mr-1">
+          favorite
+        </i>
+        <span class="">{{articles.favoritesCount}}</span>
+     
+        </span>
+      </button>
+        
+    </div>
+     <a routerLink="/article/{{articles.slug}}"> 
+      <div class="d-flex align-items-start flex-column my-3">
+        <h3 class="title">{{articles.title}}</h3>
+        <h6 class="font-weight-light text-secondary">{{articles.description}}</h6>
+      </div>
+     </a> 
+  </div>
+  
+  

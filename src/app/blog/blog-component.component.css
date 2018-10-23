@@ -1,0 +1,33 @@
+.username {
+    font-size: 0.9rem;
+    color: #5cb85c;
+  }
+  
+  .timestamp {
+    font-size: 0.75rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    color: #000000;
+  }
+  
+  .favorite-btn {
+    background: none;
+    border: #5cb85c solid 1px;
+    color: #5cb85c;
+    font-size: 1.1rem;
+  }
+  
+  .favorite-btn:hover {
+    background-color: #5cb85c;
+    color: #ffffff;
+  }
+   
+  .btn{
+    background-color: white;
+  }
+  .btnClicked{
+    background-color: #606360;
+  }
+  

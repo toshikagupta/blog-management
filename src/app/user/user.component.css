@@ -1,0 +1,40 @@
+.blockcss{
+    text-align: center;
+    background: #f3f3f3;
+    padding: 2rem 0 1rem;
+  }
+  .article{
+    margin: 1.5rem 0 -1px;
+    margin-top: 1.5rem;
+    margin-right: 0px;
+    margin-bottom: -1px;
+    margin-left: 0px;
+}
+  .nav-pills .nav-item {
+    float: left;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    list-style-type: none;
+    list-style-position: initial;
+    list-style-image: initial;
+}
+.nav-link.active {
+    background: #fff!important;
+    border-bottom: 2px solid #5cb85c!important;
+    color: #5cb85c!important;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.nav-pills.outline-active .nav-link {
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: 0 0;
+    color: #aaa;
+}

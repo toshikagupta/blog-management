@@ -1,0 +1,28 @@
+<div class="set-color z">
+    <div class="text">
+      conduit
+    </div>
+      <p>A place to share knowledge</p>
+    </div>
+<div class="container page">
+    <div class="row">
+      <div class="col-md-8">
+          
+              <span *ngFor="let a of articles">
+               <app-blog-component [articles]="a"></app-blog-component>
+              </span>
+              <nav  class=" d-flex justify-content-between flex-wrap" >
+                  <ul  class="pagination" *ngFor="let i of range; let j = index">
+                  <li (click)=nextPage(j) class="page-item " >
+                  <a class="page-link">{{j+1}}</a>
+                  </li>
+                  </ul>
+                  </nav> 
+        </div>
+        <div class="col-md-4">
+          <app-tags (tagarticles)='display($event)'></app-tags>
+        </div>
+      </div>
+     
+    </div>
+   

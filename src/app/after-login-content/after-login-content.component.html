@@ -1,0 +1,35 @@
+<div class="feed-toggle">
+    <ul class="nav nav-pills outline-active">
+
+      <li class="nav-item" style="display: inherit;">
+        <button (click)="getMyFeed()"
+         class="nav-link ">
+          Your Feed
+      </button>
+      </li>
+
+      <li class="nav-item">
+        <button (click)="getGlobalFeed()"
+       class="nav-link">
+          Global Feed
+      </button>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="container page">
+      <div class="row">
+        <div class="col-md-8">
+            
+                <span *ngFor="let a of articles">
+                 <app-blog-component [articles]="a"></app-blog-component>
+                </span>
+             
+          </div>
+          <div class="col-md-4">
+           
+          </div>
+        </div>
+      </div>
+  
